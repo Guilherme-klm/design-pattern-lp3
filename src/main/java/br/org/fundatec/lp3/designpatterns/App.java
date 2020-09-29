@@ -1,5 +1,6 @@
 package br.org.fundatec.lp3.designpatterns;
 
+import br.org.fundatec.lp3.designpatterns.service.PersonagemFactory;
 import br.org.fundatec.lp3.designpatterns.model.Personagem;
 import br.org.fundatec.lp3.designpatterns.service.CriaPersonagem;
 import br.org.fundatec.lp3.designpatterns.service.Ringue;
@@ -8,7 +9,8 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) throws Exception {
-		CriaPersonagem criaPersonagem = new CriaPersonagem();
+		PersonagemFactory personagemFactory = new PersonagemFactory();
+		CriaPersonagem criaPersonagem = new CriaPersonagem(personagemFactory);
 		Ringue ringue = new Ringue();
 		Scanner scanner = new Scanner(System.in);
 
